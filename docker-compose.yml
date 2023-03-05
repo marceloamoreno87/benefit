@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: ":8080"
+      BENEFIT_GRPC_URL: "msbenefit:50051"
+    networks:
+      - local
+  msbenefit:
+    build:
+      context: ./msbenefit
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"
+    environment:
+      PORT: ":50051"
+      API_URL: "http://extratoblubeapp-env.eba-mvegshhd.sa-east-1.elasticbeanstalk.com"
+      API_LOGIN: "testekonsi"
+      API_PASSWORD: "testekonsi"
+    networks:
+      - local
+networks:
+  local:
+    driver: bridge

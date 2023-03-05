@@ -1,0 +1,26 @@
+basePath: /api
+host: localhost:8080
+info:
+  contact:
+    email: marceloamoreno87@gmail.com
+    name: Marcelo Moreno
+  description: Teste para vaga.
+  title: Konsi API - Benefit
+  version: "1.0"
+paths:
+  /benefit:
+    get:
+      description: Return all benefits of the user by document (CPF) from http://extratoclube.com.br.
+      parameters:
+      - description: Type the cpf of the user who wants to get the benefits
+        in: query
+        name: doc
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get benefits by document (CPF)
+      tags:
+      - Get Benefits
+swagger: "2.0"

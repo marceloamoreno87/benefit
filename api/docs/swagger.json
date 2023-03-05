@@ -1,0 +1,38 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Teste para vaga.",
+        "title": "Konsi API - Benefit",
+        "contact": {
+            "name": "Marcelo Moreno",
+            "email": "marceloamoreno87@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "paths": {
+        "/benefit": {
+            "get": {
+                "description": "Return all benefits of the user by document (CPF) from http://extratoclube.com.br.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Get Benefits"
+                ],
+                "summary": "Get benefits by document (CPF)",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Type the cpf of the user who wants to get the benefits",
+                        "name": "doc",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

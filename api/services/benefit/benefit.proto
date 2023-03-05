@@ -1,0 +1,20 @@
+syntax="proto3";
+package proto;
+option go_package = "github.com/marceloamoreno87/msbenefit";
+
+message NewBenefit {
+   string doc = 1;
+}
+ 
+message Benefit {
+  string nb = 1;
+}
+
+ message User {
+	string cpf  = 1;
+   repeated Benefit beneficios = 2;
+}
+
+service BenefitService {
+   rpc GetBenefit(NewBenefit) returns (User) {}
+}
