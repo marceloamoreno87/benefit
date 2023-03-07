@@ -3,14 +3,13 @@ package controllers
 import (
 	"context"
 	"errors"
-	"log"
 	"os"
 
 	validatedoc "github.com/klassmann/cpfcnpj"
 
 	"github.com/gin-gonic/gin"
+	"github.com/marceloamoreno87/api/infra/grpc"
 	benefitsv "github.com/marceloamoreno87/api/services/benefit"
-	"google.golang.org/grpc"
 )
 
 type Benefit struct {
@@ -35,14 +34,6 @@ func NewBenefit() (*Benefit, error) {
 	return benefit, nil
 }
 
-func GetConnGrpc(url string) grpc.ClientConnInterface {
-	conn, err := grpc.Dial(os.Getenv("BENEFIT_GRPC_URL"), grpc.WithInsecure())
-	if err != nil {
-		log.Printf("did not connect: %v", err)
-	}
-	return conn
-}
-
 // GetBenfitByDoc             godoc
 // @Summary      Get benefits by document (CPF)
 // @Description  Return all benefits of the user by document (CPF) from http://extratoclube.com.br.
@@ -58,7 +49,7 @@ func GetBenfitByDoc(c *gin.Context) {
 		c.AbortWithStatusJSON(500, gin.H{"status": false, "error": err.Error()})
 		return
 	}
-	b := benefitsv.NewBenefitServiceClient(GetConnGrpc(os.Getenv("BENEFIT_GRPC_URL")))
+	b := benefitsv.NewBenefitServiceClient(grpc.GetConnGrpc(os.Getenv("BENEFIT_GRPC_URL")))
 	resp, err := b.GetBenefit(context.Background(), &benefitsv.NewBenefit{Doc: benefit.Doc})
 	if err != nil {
 		c.AbortWithStatusJSON(500, gin.H{"status": false, "error": err})
