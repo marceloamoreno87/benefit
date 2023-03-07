@@ -25,5 +25,5 @@ URL: http://localhost:8080/docs/index.html
 
 ## Como rodar os testes
 
-1) inicie o projeto manualmente (sem docker)
+1) Inicie o projeto manualmente (sem docker)
 2) Rode o comando na pasta "api": go test ./tests -v
