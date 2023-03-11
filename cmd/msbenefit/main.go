@@ -7,10 +7,10 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/marceloamoreno87/msbenefit/internal/benefit"
-	"github.com/marceloamoreno87/msbenefit/internal/token"
-	msbenefit "github.com/marceloamoreno87/msbenefit/proto"
-	pb "github.com/marceloamoreno87/msbenefit/proto"
+	"github.com/marceloamoreno87/benefit/internal/benefit"
+	"github.com/marceloamoreno87/benefit/internal/token"
+	msbenefit "github.com/marceloamoreno87/benefit/proto"
+	pb "github.com/marceloamoreno87/benefit/proto"
 	"google.golang.org/grpc"
 )
 

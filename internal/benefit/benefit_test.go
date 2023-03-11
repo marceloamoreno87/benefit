@@ -1,11 +1,11 @@
-package tests
+package benefit
 
 import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
-	"github.com/marceloamoreno87/api/routes"
+	"github.com/marceloamoreno87/benefit/api/routes"
 	"github.com/stretchr/testify/assert"
 )
 

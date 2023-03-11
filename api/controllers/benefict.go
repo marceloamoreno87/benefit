@@ -8,8 +8,8 @@ import (
 	validatedoc "github.com/klassmann/cpfcnpj"
 
 	"github.com/gin-gonic/gin"
-	"github.com/marceloamoreno87/api/infra/grpc"
-	benefitsv "github.com/marceloamoreno87/api/services/benefit"
+	"github.com/marceloamoreno87/benefit/pkg/grpc"
+	benefitsv "github.com/marceloamoreno87/benefit/proto"
 )
 
 type Benefit struct {

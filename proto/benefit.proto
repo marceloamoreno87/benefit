@@ -1,6 +1,6 @@
 syntax="proto3";
 package proto;
-option go_package = "github.com/marceloamoreno87/msbenefit";
+option go_package = "github.com/marceloamoreno87/benefit";
 
 message NewBenefit {
    string doc = 1;

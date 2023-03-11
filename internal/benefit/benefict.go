@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	msbenefit "github.com/marceloamoreno87/msbenefit/proto"
+	msbenefit "github.com/marceloamoreno87/benefit/proto"
 )
 
 func GetBenefits(url_api string, bearerToken string, doc string) msbenefit.User {
