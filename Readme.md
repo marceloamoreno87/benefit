@@ -11,17 +11,15 @@
 
 ## Requisitos
 
+1) Go (https://go.dev/doc/install)
 1) Docker (https://docs.docker.com/engine/install)
-2) Docker compose (https://docs.docker.com/compose/)
+3) Docker compose (https://docs.docker.com/compose/)
 
 ## Como iniciar o projeto via docker
 
 1) Vá até onde o arquivo docker-compose.yml está (Raiz do projeto)
 2) Rode o comando: docker compose up
 
-## Requisitos
-
-1) Go (https://go.dev/doc/install)
 
 ## Como iniciar o projeto manualmente (sem docker)
 
