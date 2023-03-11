@@ -1,5 +1,14 @@
 # Sistema para capturar beneficios de usuários usando o CPF
 
+## Baixando e Instalando pacotes
+
+1) Na raiz do projeto rode o comando: go mod tidy
+
+## Configurando variáveis de ambiente
+
+1) Vá até a pasta cmd/api e crie o arquivo .env com base no .env.example
+2) Vá até a pasta cmd/msbenefit e crie o arquivo .env com base no .env.example
+
 ## Requisitos
 
 1) Docker (https://docs.docker.com/engine/install)
