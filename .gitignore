@@ -1,3 +1,2 @@
-./go.sum
-./cmd/api/.env
-./cmd/msbenefit/.env
+/cmd/api/.env
+/cmd/msbenefit/.env
