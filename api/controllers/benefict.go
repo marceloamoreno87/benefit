@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"os"
+	"strings"
 
 	validatedoc "github.com/klassmann/cpfcnpj"
 
@@ -17,14 +18,15 @@ type Benefit struct {
 }
 
 func (b *Benefit) ValidateBenefit() error {
-	if b.Doc == "" {
-		return errors.New("Doc is required")
-	}
-
-	doc := validatedoc.NewCPF(b.Doc)
-
-	if !doc.IsValid() {
-		return errors.New("Doc is invalid")
+	chunks := strings.Split(b.Doc, ",")
+	for _, c := range chunks {
+		if c == "" {
+			return errors.New("Doc is required")
+		}
+		doc := validatedoc.NewCPF(c)
+		if !doc.IsValid() {
+			return errors.New("Doc is invalid")
+		}
 	}
 	return nil
 }

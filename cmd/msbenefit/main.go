@@ -39,19 +39,14 @@ func main() {
 	}
 }
 
-func (s *BenefitServer) GetBenefit(ctx context.Context, in *pb.NewBenefit) (*pb.User, error) {
+func (s *BenefitServer) GetBenefit(ctx context.Context, in *pb.NewBenefit) (*pb.Users, error) {
 	res := scrape(in.GetDoc())
-
-	benefits := &pb.User{
-		Cpf:        res.Cpf,
-		Beneficios: res.Beneficios,
-	}
-
+	var benefits *pb.Users
+	benefits = &pb.Users{Users: res}
 	return benefits, nil
-
 }
 
-func scrape(Doc string) msbenefit.User {
+func scrape(Doc string) []*msbenefit.User {
 
 	url_api := os.Getenv("API_URL")
 	credential := token.Credentials{

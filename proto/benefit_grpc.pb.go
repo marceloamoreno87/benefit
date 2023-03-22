@@ -4,7 +4,7 @@
 // - protoc             v3.6.1
 // source: proto/benefit.proto
 
-package msbenefit
+package benefit
 
 import (
 	context "context"
@@ -26,7 +26,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BenefitServiceClient interface {
-	GetBenefit(ctx context.Context, in *NewBenefit, opts ...grpc.CallOption) (*User, error)
+	GetBenefit(ctx context.Context, in *NewBenefit, opts ...grpc.CallOption) (*Users, error)
 }
 
 type benefitServiceClient struct {
@@ -37,8 +37,8 @@ func NewBenefitServiceClient(cc grpc.ClientConnInterface) BenefitServiceClient {
 	return &benefitServiceClient{cc}
 }
 
-func (c *benefitServiceClient) GetBenefit(ctx context.Context, in *NewBenefit, opts ...grpc.CallOption) (*User, error) {
-	out := new(User)
+func (c *benefitServiceClient) GetBenefit(ctx context.Context, in *NewBenefit, opts ...grpc.CallOption) (*Users, error) {
+	out := new(Users)
 	err := c.cc.Invoke(ctx, BenefitService_GetBenefit_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -50,7 +50,7 @@ func (c *benefitServiceClient) GetBenefit(ctx context.Context, in *NewBenefit, o
 // All implementations must embed UnimplementedBenefitServiceServer
 // for forward compatibility
 type BenefitServiceServer interface {
-	GetBenefit(context.Context, *NewBenefit) (*User, error)
+	GetBenefit(context.Context, *NewBenefit) (*Users, error)
 	mustEmbedUnimplementedBenefitServiceServer()
 }
 
@@ -58,7 +58,7 @@ type BenefitServiceServer interface {
 type UnimplementedBenefitServiceServer struct {
 }
 
-func (UnimplementedBenefitServiceServer) GetBenefit(context.Context, *NewBenefit) (*User, error) {
+func (UnimplementedBenefitServiceServer) GetBenefit(context.Context, *NewBenefit) (*Users, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBenefit not implemented")
 }
 func (UnimplementedBenefitServiceServer) mustEmbedUnimplementedBenefitServiceServer() {}

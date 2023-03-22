@@ -15,6 +15,10 @@ message Benefit {
    repeated Benefit beneficios = 2;
 }
 
+message Users {
+	repeated User users  = 1;
+}
+
 service BenefitService {
-   rpc GetBenefit(NewBenefit) returns (User) {}
+   rpc GetBenefit(NewBenefit) returns (Users) {}
 }
