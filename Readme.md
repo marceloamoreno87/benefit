@@ -34,3 +34,8 @@ URL: http://localhost:8080/docs/index.html
 
 1) Inicie o projeto manualmente (sem docker)
 2) Rode o comando na pasta "api": go test ./tests -v
+
+## Endpoint
+
+URL: localhost:8080/api/benefit?doc=927.100.938-04,351.165.848-95
+obs: Pode incluir quantos cpfs quiser colocando "vírgula"
