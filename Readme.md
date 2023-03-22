@@ -37,5 +37,5 @@ URL: http://localhost:8080/docs/index.html
 
 ## Endpoint
 
-1) URL: localhost:8080/api/benefit?doc=927.100.938-04,351.165.848-95
-2) obs: Pode incluir quantos cpfs quiser colocando "vírgula"
+1) URL: http://localhost:8080/api/benefit?doc=927.100.938-04,351.165.848-95
+2) OBS: Pode incluir quantos cpfs quiser colocando "vírgula"
